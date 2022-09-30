@@ -6,45 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calculator</title>
 </head>
+<link rel="stylesheet" href="main.css">
 <body>
     
     <h1 class="header">Online Calculator</h1>
 
 <main>
-    <span class="data__display">1984</span>
-    <button class="data__operator data__operator--delete">c</button>
+    <div class="calculator">
 
-    <button class="data__operator data__operator--posToNeg">+/-</button>
+        <div class="calculator__display">
+        1984
+        </div>
 
-    <button class="data__operator data__operator--percentage">%</button>
+        <div class="calculator__keys">
+            <button class="data__operator data__operator--delete">c</button>
 
-    <button class="data__operator data__operator--divide">÷</button>
+            <button class="data__operator data__operator--posToNeg">+/-</button>
 
-    <button class="data__number data__numer--9">9</button>
+            <button class="data__operator data__operator--percentage">%</button>
 
-    <button class="data__number data__numer--8">8</button>
+            <button class="data__operator data__operator--divide">÷</button>
 
-    <button class="data__number data__numer--7">7</button>
+            <button>9</button>
 
-    <button class="data__operator data__operator--multiply">x</button>
+            <button>8</button>
 
-    <button class="data__number data__number--6">6</button>
-    <button class="data__number data__numer--5">5</button>
-    <button class="data__number data__numer--4">4</button>
+            <button>7</button>
 
-    <button class="data__operator data__operator--subtract">-</button>
+            <button class="data__operator data__operator--multiply">x</button>
 
-    <button class="data__number data__numer--3">3</button>
-    <button class="data__number data__numer--2">2</button>
-    <button class="data__number data__numer--1">1</button>
+            <button class=>6</button>
+            <button class=>5</button>
+            <button class=>4</button>
+
+            <button class="data__operator data__operator--subtract">-</button>
+
+            <button class=>3</button>
+            <button class=>2</button>
+            <button class=>1</button>
 
 
-    <button class="data__operator data__operator--add">+</button>
-    
-    <button class="data__number data__numer--0">0</button>
-    <button class="data__number data__numer--.">.</button>
-    <button class="data__operator data__operator--equals">=</button>
+            <button class="data__operator data__operator--add">+</button>
 
+            <button class=>0</button>
+            <button class=>.</button>
+            <button class="data__operator data__operator--equals">=</button>
+        </div>
+    </div>
 </main>
 
 <script src="app.js"></script>
