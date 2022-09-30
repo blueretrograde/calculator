@@ -23,6 +23,13 @@ const divide = document.querySelector(".main__divide")
 
 const num9 =  document.querySelector(".main__9")
 
+    onClickEvent = (event) => {
+        console.log("event object on click", event);
+        mainDisplay.innerText = 9
+    }
+
+    num9.addEventListener("click", onClickEvent)
+
 //acessing the number 8 button
 
 const num8 = document.querySelector(".main__8")
