@@ -1,5 +1,5 @@
 
-//accesing the body of the calculator (including display)
+//accesing the body of the calculator (including the display)
 
 const calculator = document.querySelector(".calculator")
 
@@ -7,37 +7,122 @@ const calculator = document.querySelector(".calculator")
 
 const keys = document.querySelector(".calculator__keys") 
 
-//acessing the display of the calculator
+//accessing the display of the calculator
 
 const display = document.querySelector(".calculator__display")
+
+//accessing the numbers
+const numbersBtn = document.querySelectorAll(".data__number")
+
+//accessing the operators
+const operators = document.querySelectorAll(".data__operator")
 
 //accessing the equals button
 const equalsBtn = document.querySelector(".data__operator--equals")
 
-//acessing the delete button
+//accessing the delete button
 const delBtn= document.querySelector(".data__operator--delete")
 
-//switch case for calculator functions (??????)
+const equationArr = [];
+const equationArr2 = [];
 
-switch() {
-    case '+':
-        result = number1 + number2;
-        console.log(number1 + " + " + number2 + " = " + result);
-        break;
+//--CALCULATOR FUNCTIONS (not seen by user)
 
-    case '-':
-        result = number1 - number2;
-        console.log(number1 + " - " + number2 + " = " + result);
-        break;
+//number1
 
-    case '*':
-        result = number1 * number2;
-        console.log(number1 + " x " + number2 + " = " + result);
-        break;
+//number2
 
-    case '/':
-        result = number1 / number2;
-        console.log(number1 + " / " + number2 + " = " + result);
-        break;
+//result
 
-//function for the operations (???)
+
+//To store the user input data & display the result
+
+
+//To display the results 
+
+
+
+
+// switch case for calculator functions (??????)
+
+// const calculation = () => {
+//     //get 2 numbers and an operator
+
+//     //const number1 = equationArr
+//     //const number2 = equationArr2
+//     //const result
+
+
+// switch(operators) {
+//     case '+':
+//         result = number1 + number2;
+//         console.log(number1 + " + " + number2 + " = " + result);
+//         break;
+
+//     case '-':
+//         result = number1 - number2;
+//         console.log(number1 + " - " + number2 + " = " + result);
+//         break;
+
+//     case '*':
+//         result = number1 * number2;
+//         console.log(number1 + " x " + number2 + " = " + result);
+//         break;
+
+//     case '/':
+//         result = number1 / number2;
+//         console.log(number1 + " / " + number2 + " = " + result);
+//         break;
+
+// }
+
+//--CALCULATOR OPERATORS
+
+
+//delete button function(?)
+
+const clickDelete = (event) => {
+    console.log(event);
+    display.innerText = "0"
+    //result = 0
+}
+const handleNumberPress = (event) => {
+    let input = event.target.innerHTML
+    equationArr.push(input)
+    console.log(equationArr)
+}
+
+const handleOperatorPress = (event) => {
+    let operator = event.target.innerHTML
+    equationArr.push(operator)
+    console.log("eq1", equationArr)
+}
+
+// const operatorClicked = (event) => {
+//     let input2 = event.target.innerHTML
+//     equationArr2.push(input2)
+//     console.log("eq2", equationArr2)
+// }
+
+const operatorClicked = (event) => {
+    let input2 = event.target.innerHTML
+    equationArr.slice(handleOperatorPress);
+    equationArr2.push(input2)
+    console.log("eq2", equationArr2)
+}
+
+
+delBtn.addEventListener("click", clickDelete) 
+
+
+numbersBtn.forEach((number)=> {
+    number.addEventListener("click", handleNumberPress);
+})
+ 
+operators.forEach((operator) => {
+    operator.addEventListener("click", handleOperatorPress);
+})
+
+operators.forEach((operator) => {
+    operator.addEventListener("click", operatorClicked);
+})
