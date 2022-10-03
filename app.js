@@ -23,6 +23,7 @@ const equalsBtn = document.querySelector(".data__operator--equals")
 //accessing the delete button
 const delBtn= document.querySelector(".data__operator--delete")
 
+
 const equationArr = [];
 const equationArr2 = [];
 
@@ -90,6 +91,7 @@ const handleNumberPress = (event) => {
     let input = event.target.innerHTML
     equationArr.push(input)
     console.log(equationArr)
+    display.innerText = equationArr.join("")
 }
 
 const handleOperatorPress = (event) => {
@@ -98,18 +100,12 @@ const handleOperatorPress = (event) => {
     console.log("eq1", equationArr)
 }
 
-// const operatorClicked = (event) => {
-//     let input2 = event.target.innerHTML
-//     equationArr2.push(input2)
-//     console.log("eq2", equationArr2)
-// }
-
 const operatorClicked = (event) => {
     let input2 = event.target.innerHTML
-    equationArr.slice(handleOperatorPress);
     equationArr2.push(input2)
     console.log("eq2", equationArr2)
 }
+
 
 
 delBtn.addEventListener("click", clickDelete) 
@@ -118,7 +114,7 @@ delBtn.addEventListener("click", clickDelete)
 numbersBtn.forEach((number)=> {
     number.addEventListener("click", handleNumberPress);
 })
- 
+
 operators.forEach((operator) => {
     operator.addEventListener("click", handleOperatorPress);
 })
@@ -126,3 +122,4 @@ operators.forEach((operator) => {
 operators.forEach((operator) => {
     operator.addEventListener("click", operatorClicked);
 })
+
